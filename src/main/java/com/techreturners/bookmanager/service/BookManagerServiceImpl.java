@@ -43,5 +43,12 @@ public class BookManagerServiceImpl implements BookManagerService {
 
         bookManagerRepository.save(retrievedBook);
     }
+    //User Story 5 - Delete Book By Id Solution
+    @Override
+    public void deleteBookById(Long id) {
+        Book retrievedBook = bookManagerRepository.findById(id).get();
+        bookManagerRepository.deleteById(retrievedBook.getId());
+    }
+
 
 }
