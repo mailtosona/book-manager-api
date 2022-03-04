@@ -13,7 +13,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/book")
 public class BookManagerController {
-
     @Autowired
     BookManagerService bookManagerService;
 
@@ -43,7 +42,7 @@ public class BookManagerController {
         return new ResponseEntity<>(bookManagerService.getBookById(bookId), HttpStatus.OK);
     }
     //User Story 5 - Delete Book By Id
-    @PutMapping({"/{bookId}"})
+    @DeleteMapping({"/{bookId}"})
     public ResponseEntity<Book> testDeleteABook(@PathVariable("bookId") Long bookId) {
         bookManagerService.deleteBookById(bookId);
         return new ResponseEntity<>(bookManagerService.getBookById(bookId), HttpStatus.OK);

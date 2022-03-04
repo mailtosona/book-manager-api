@@ -108,7 +108,8 @@ public class BookManagerControllerTests {
 
         verify(mockBookManagerServiceImpl, times(1)).updateBookById(book.getId(), book);
     }
-
+//user story 5 -  Delete Book By Id Solution
+    @Test
     public void testDeleteABook() throws Exception {
         Book book = new Book(1L, "Fabulous Four", "This is the description for the Fabulous Four", "Person Four", Genre.Fantasy);
 
